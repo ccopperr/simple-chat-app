@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
+$lightGray: #d8d8d8;
+$darkOrange: #f58f29;
+$trueBlue: #4464ad;
+
+$emerald: #14cc60;
+
+$messagePrimaryBg: #d8d8d8;
+$messageSecondaryBg: #98FB98;
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ececec;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cg fill='%23c7c7c7' fill-opacity='0.27'%3E%3Cpolygon fill-rule='evenodd' points='8 4 12 6 8 8 6 12 4 8 0 6 4 4 6 0 8 4'/%3E%3C/g%3E%3C/svg%3E");
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    font: {
+        family: 'Open Sans', 'Helvetica', sans-serif;
+    }
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $lightGray;
+    width: 100%;
+    height: 100%;
+    padding: 0.5rem 0;
+    max-height: 4rem;
+
+    .logo {
+        font: {
+            size: 1.2rem;
+            weight: 600;
+        }
+    }
+    .subtext {
+        font: {
+            size: 1.1rem;
+        }
+    }
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background-color: darken(#fff, 10%);
+    .avatar {
+        width: 75px;
+        height: 75px;
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: 9999px;
+        }
+    }
+    .user-info {
+        margin-left: 1rem;
+        color: lighten(#000, 20%);
+        font: {
+            size: 1.1rem;
+            weight: bold;
+        }
+    }
+}
+
+.feedback {
+    margin-left: auto;
+    h5 {
+        font: {
+            size: 0.8rem;
+            weight: bold;
+        }
+    }
+}
+
+.input-area {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0 2rem 1.5rem 2rem;
+    input[type="text"] {
+        padding: .6rem .4rem;
+        outline: none;
+        border-radius: 7px;
+        border: 1px solid $lightGray;
+        width: 100%;
+        font: {
+            family: 'Open Sans', sans-serif;
+            size: 1rem;
+        }
+    }
+    button {
+        outline: none;
+        border: none;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        margin-left: .4rem;
+        border: 1px solid $lightGray;
+        cursor: pointer;
+
+        &:hover {
+            background-color: darken(#fff, 10%);
+        }
+    }
+    .fa-paper-plane {
+        color: rgb(0, 195, 255);
+    }
+}
+
+input:focus, button:focus {
+    outline: none;
+}
+
+.chat-box {
+    width: 100%;
+    height: 100%;
+    padding: .2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.message {
+    padding: .3rem 1rem;
+    margin: .5rem 0;
+    border-radius: 7px;
+    width: fit-content;
+    max-width: 60%;
+
+    .sendername {
+        font-weight: bold;
+        line-height: 1rem;
+        display: flex;
+        align-items: center;
+        margin-bottom: .5rem;
+
+        span, h5 {
+            margin-left: .5rem;
+        }
+
+        h5 {
+            font-weight: normal;
+            font-size: 1rem;
+        }
+    }
+
+    .timestamp {
+        color: #646464;
+        font-size: .6rem;
+    }
+}
+
+.messageAvatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 9999px;
+}
+
+#avatarURL {
+    margin-left: 1rem;
+}
+
+.message.primary {
+    text-align: right;
+    background-color: $messagePrimaryBg;
+    margin-left: auto;
+}
+
+.message.secondary {
+    text-align: left;
+    background-color: $messageSecondaryBg;
+    margin-right: auto;
+}
+
+/* Media Queries */
+
+@media only screen and (max-width: 600px) {
+    .contact-info {
+        .avatar {
+            width: 35px;
+            height: 35px;
+        }
+    }
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.3/socket.io.js"></script>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="header">
+            <div class="logo">Chat UI</div>
+            <div class="subtext">Connect to people.</div>
+        </div>
+        <div class="contact-info">
+            <div class="avatar">
+                <img src="https://via.placeholder.com/75" alt="Avatar" id="avatarImg">
+            </div>
+            <div class="user-info">
+                <input type="text" id="sender" placeholder="Rumuz..." spellcheck="false">
+            </div>
+            <div class="avatarChange">
+                <input type="text" id="avatarURL" placeholder="Avatar URL..." spellcheck="false">
+            </div>
+            <div class="feedback">
+                <h5 id="feedbackTxt"></h5>
+            </div>
+        </div>
+        <div class="chat-box" id="chat-box">
+            
+        </div>
+        <div class="input-area">
+            <input type="text" name="" id="message" placeholder="Mesajınız...">
+            <button id="submit"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+    
+    <script src="chat.js"></script>
+
+</body>
+</html>

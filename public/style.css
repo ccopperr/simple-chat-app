@@ -1,0 +1,222 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #ececec;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cg fill='%23c7c7c7' fill-opacity='0.27'%3E%3Cpolygon fill-rule='evenodd' points='8 4 12 6 8 8 6 12 4 8 0 6 4 4 6 0 8 4'/%3E%3C/g%3E%3C/svg%3E");
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: 'Open Sans', 'Helvetica', sans-serif;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #d8d8d8;
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem 0;
+  max-height: 4rem;
+}
+
+.header .logo {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.header .subtext {
+  font-size: 1.1rem;
+}
+
+.contact-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem;
+  background-color: #e6e6e6;
+}
+
+.contact-info .avatar {
+  width: 75px;
+  height: 75px;
+}
+
+.contact-info .avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 9999px;
+}
+
+.contact-info .user-info {
+  margin-left: 1rem;
+  color: #333333;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.feedback {
+  margin-left: auto;
+}
+
+.feedback h5 {
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.input-area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  padding: 0 2rem 1.5rem 2rem;
+}
+
+.input-area input[type="text"] {
+  padding: .6rem .4rem;
+  outline: none;
+  border-radius: 7px;
+  border: 1px solid #d8d8d8;
+  width: 100%;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+}
+
+.input-area button {
+  outline: none;
+  border: none;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  margin-left: .4rem;
+  border: 1px solid #d8d8d8;
+  cursor: pointer;
+}
+
+.input-area button:hover {
+  background-color: #e6e6e6;
+}
+
+.input-area .fa-paper-plane {
+  color: #00c3ff;
+}
+
+input:focus, button:focus {
+  outline: none;
+}
+
+.chat-box {
+  width: 100%;
+  height: 100%;
+  padding: .2rem 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow-y: auto;
+}
+
+.message {
+  padding: .3rem 1rem;
+  margin: .5rem 0;
+  border-radius: 7px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  max-width: 60%;
+}
+
+.message .sendername {
+  font-weight: bold;
+  line-height: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: .5rem;
+}
+
+.message .sendername span, .message .sendername h5 {
+  margin-left: .5rem;
+}
+
+.message .sendername h5 {
+  font-weight: normal;
+  font-size: 1rem;
+}
+
+.message .timestamp {
+  color: #646464;
+  font-size: .6rem;
+}
+
+.messageAvatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 9999px;
+}
+
+#avatarURL {
+  margin-left: 1rem;
+}
+
+.message.primary {
+  text-align: right;
+  background-color: #d8d8d8;
+  margin-left: auto;
+}
+
+.message.secondary {
+  text-align: left;
+  background-color: #98FB98;
+  margin-right: auto;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 600px) {
+  .contact-info .avatar {
+    width: 35px;
+    height: 35px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
