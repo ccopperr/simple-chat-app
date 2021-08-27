@@ -1,4 +1,4 @@
-const socket = io.connect('https://6f68-24-133-101-77.ngrok.io/');
+const socket = io.connect('http://localhost:3000/');
 
 var sender = document.getElementById('sender');
 var submitBtn = document.getElementById('submit');
