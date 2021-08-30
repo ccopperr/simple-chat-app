@@ -59,10 +59,6 @@ function sendMessage(id, sender, message, color, avatarURL) {
         _time = date.getHours() + ":" + date.getMinutes();
     }
 
-    if(!sender.length) {
-        return alert('Kullanıcı adı seçmeden mesaj gönderemezsiniz!');
-    }
-
     socket.emit('chat', {
         id: id,
         sender: sender,
