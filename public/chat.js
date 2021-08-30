@@ -1,4 +1,4 @@
-const socket = io.connect('http://localhost:3000/');
+const socket = io.connect('http://copperx.local:3000/');
 
 var sender = document.getElementById('sender');
 var submitBtn = document.getElementById('submit');
@@ -7,10 +7,12 @@ var output = document.getElementById('chat-box');
 var feedback = document.getElementById('feedbackTxt');
 var avatarURL = document.getElementById('avatarURL');
 var avatarImg = document.getElementById('avatarImg');
+var key = document.getElementById('key');
 
-const defaultAvatar = 'https://www.pngarts.com/files/8/Baby-Yoda-PNG-Image-Transparent-Background.png';
+const defaultAvatar = './avatars/default-yoda.png';
 
-const myColor = getRandomColor();
+localStorage.getItem('color') ? localStorage.getItem('color') : localStorage.setItem('color', getRandomColor());
+const myColor = localStorage.getItem('color');
 let myAvatar = localStorage.getItem('avatarURL') ? localStorage.getItem('avatarURL') : defaultAvatar;
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -19,6 +21,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     if(localStorage.getItem('avatarURL') !== undefined) {
         avatarURL.value = localStorage.getItem('avatarURL');
+    }
+    if(localStorage.getItem('avatarKey')) {
+        key.value = localStorage.getItem('avatarKey');
+    } else {
+        key.value = guidGenerator();
+        localStorage.setItem('avatarKey', key.value);
     }
     avatarImg.src = myAvatar;
 });
@@ -39,6 +47,9 @@ avatarImg.addEventListener('error', () => {
 });
 
 function sendMessage(id, sender, message, color, avatarURL) {
+    if(!sender.length) return alert("Kullanıcı adı seçmelisiniz.");
+    if(!message.length) return alert("Boş mesaj gönderemezsiniz!");
+    
     let date = new Date();
     let _time;
 
@@ -112,4 +123,11 @@ function getRandomColor() {
       color += letters[Math.floor(Math.random() * 16)];
     }
     return color;
+}
+
+function guidGenerator() {
+    var S4 = function() {
+       return (((1+Math.random())*0x10000)|0).toString(16).substring(1);
+    };
+    return (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());
 }
